@@ -43,8 +43,8 @@ public class Board extends Tile {
         Scanner scanner = new Scanner(System.in);
         Integer playerNumber = Integer.parseInt(scanner.nextLine());
 
-            System.out.println("Name players is : "  + playerNumber);
-            return playerNumber;
+        System.out.println("Name players is : " + playerNumber);
+        return playerNumber;
 
     }
 
@@ -60,8 +60,8 @@ public class Board extends Tile {
 
         int n = playersNumber();
 
-        for (int i = n; i > 1; i--) {
-           String playerName = playerName();
+        for (int i = n; i >= 1; i--) {
+            String playerName = playerName();
             Player player = new Player(playerName);
             players.add(player);
         }
@@ -74,17 +74,21 @@ public class Board extends Tile {
             players.forEach(entry -> entry.addTileMain(tile));
         }
     }
-
-
     public void setUpGame() {
         playersMaker();
         piocheMaker();
+        makeMainPlayer();
     }
 
+    public Player getPlayer(int n ){
+        return players.get(n);
+    }
     public void getPioche() {
         for (Tile tile : pioche) {
             System.out.println("Value: " + tile.getValue() + ", Color: " + tile.getColor());
         }
     }
+
+
 
 }

@@ -10,7 +10,9 @@ public class Main {
         board.piocheMaker();
         board.getPioche();
         board.setUpGame();
-
+        board.getPlayer(1).getMain();
     }
+
+
 }
 

@@ -13,6 +13,11 @@ public class Player {
     public void addTileMain(Tile t) {
         main.add(t);
     }
+    public void getMain() {
+        for (Tile tile : main) {
+            System.out.println("Value: " + tile.getValue() + ", Color: " + tile.getColor());
+        }
+    }
     public void removeTile(Tile t) {
         main.remove(t);
     }
